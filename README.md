@@ -84,17 +84,21 @@ SELECT empName, empSalary FROM Employee_Info</code></pre>
 <h4>Update Command</h4>
 <p>Use the following SQL query to update the job title of an employee from "Developer" to "Business Man" in the Employee_Info table:</p>
 <pre><code>UPDATE Employee_Info SET job = 'Business Man' WHERE job = 'Developer'</code></pre>
+
 <h4>Delete Command</h4>
 <p>Use the following SQL query to delete a record from the Employee_Info table where the empId is 2:</p>
 <p>Note that DELETE can be rolled back using the ROLLBACK statement, whereas TRUNCATE cannot be rolled back.</p>
 <pre><code>DELETE FROM Employee_Info WHERE empId = 2</code></pre>
 
-My Chat gpt rules :-
-make its html for readme file on github
-give h4 heading to line starting from $
-give paragraph to line starting from %
-give code script to line starting from #
-
+<h4>Order By Clause</h4>
+<p>Used to arrange data in certain format like Asc or Desc order, Always used with Select Command</p>
+<pre><code>select * from Employee_Info order by empName desc</code></pre>
+<pre><code>select * from Employee_Info order by empSalary asc</code></pre>
+<h4>Where Clause</h4>
+<p>This clause helps you to restrict query to rows that meet a specific condition</p>
+<pre><code>select empName, job from Employee_Info where empId = 1015</code></pre>
+<pre><code>update Employee_Info set empName = 'Umer' where empId=1014</code></pre>
+<pre><code>delete from Employee_Info where empId = 1007</code></pre>
 
 
 
