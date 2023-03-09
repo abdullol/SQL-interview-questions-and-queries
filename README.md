@@ -100,38 +100,51 @@ SELECT empName, empSalary FROM Employee_Info</code></pre>
 <pre><code>update Employee_Info set empName = 'Umer' where empId=1014</code></pre>
 <pre><code>delete from Employee_Info where empId = 1007</code></pre>
 
-$ Aggregate Function/Group Function
-% It is applied on numeric value
-# SELECT SUM(empSalary) from Employee_Info
-# SELECT AVG(empSalary) FROM Employee_Info
-# SELECT COUNT(empSalary) FROM Employee_Info
-# SELECT MAX(empSalary) FROM Employee_Info
+<h4>Aggregate Function/Group Function</h4>
+<p>It is applied on numeric value</p>
+<pre><code>SELECT SUM(empSalary) from Employee_Info</code></pre>
+<pre><code>SELECT AVG(empSalary) FROM Employee_Info</code></pre>
+<pre><code>SELECT COUNT(empSalary) FROM Employee_Info</code></pre>
+<pre><code>SELECT MAX(empSalary) FROM Employee_Info</code></pre>
+<h4>Numeric Function</h4>
+<p>give positive of what is given</p>
+<pre><code>SELECT ABS(-10)</code></pre>
+<p>gives upper value e.g 77</p>
+<pre><code>SELECT CEILING(76.12)</code></pre>
+<p>gives lower end value e,g, 76</p>
+<pre><code>SELECT FLOOR(76.12)</code></pre>
+<p>gives square root</p>
+<pre><code>SELECT SQRT(81)</code></pre>
+<p>gives square</p>
+<pre><code>SELECT SQUARE(16)</code></pre>
+<h4>String Function</h4>
+<p>upper case</p>
+<pre><code>SELECT UPPER('this is our world')</code></pre>
+<p>lower case</p>
+<pre><code>SELECT LOWER('THIS IS OUR WORLD')</code></pre>
+<p>cut the string</p>
+<pre><code>SELECT SUBSTRING('CHATGPTWHAT', 3, 6)</code></pre>
+<p>replace string</p>
+<pre><code>SELECT REPLACE('MICROSOFTISWHATIS', 'MICRO', 'MAJOR')</code></pre>
+<p>repeat that number of times</p>
+<pre><code>SELECT REPLICATE('MAJOR', 5)</code></pre>
+<pre><code>SELECT LTRIM('      WORLD')</code></pre>
+<pre><code>SELECT RTRIM('WORLD      ')</code></pre>
 
-$ Numeric Function
-% give positive of what is given
-# SELECT ABS(-10)
-% gives uppper value e.g 77
-# SELECT CEILING(76.12)
-% fives lower end value e,g, 76
-# SELECT FLOOR(76.12)
-% gives square root
-# SELECT SQRT(81) 
-% gives square
-# SELECT SQUARE(16)
+<h4>Boolean Operator</h4>
+<p>AND, OR, NOT</p>
+<pre><code>SELECT * FROM Employee_Info WHERE empName = 'Bob Johnson' AND job = 'Intern'</code></pre>
+<pre><code>SELECT * FROM Employee_Info WHERE empName = 'Ali' OR JOB = 'Analyst'</code></pre>
+<pre><code>SELECT empName FROM Employee_Info WHERE NOT empName = 'Ali'</code></pre>
 
-$ String Function
-% upper case
-# SELECT UPPER('this is our world')
-% lower case
-# SELECT LOWER('THIS IS OUR WORLD')
-% cut the strng
-# SELECT SUBSTRING('CHATGPTWHAT', 3, 6)
-% replace string
-# SELECT REPLACE('MICROSOFTISWHATIS', 'MICRO', 'MAJOR')
-% repeat that number of time
-# SELECT REPLICATE('MAJOR', 5)
-# SELECT LTRIM('      WORLD')
-# SELECT RTRIM('WORLD      ')
+<h4>Datetime Function</h4>
+<pre><code>SELECT GETDATE() AS TODAY_DATE</code></pre>
+<pre><code>SELECT SYSDATETIME() AS SYSTEM_DATE</code></pre>
+<pre><code>SELECT CURRENT_TIMESTAMP AS TODAY_DAT</code></pre>
+<pre><code>SELECT DATENAME(MONTH, CURRENT_TIMESTAMP) AS 'MONTH'</code></pre>
+<pre><code>SELECT DATENAME(YEAR, CURRENT_TIMESTAMP) AS 'YEAR'</code></pre>
+<pre><code>SELECT DATENAME(HOUR, CURRENT_TIMESTAMP) AS 'HOUR'</code></pre>
+<pre><code>SELECT DATEDIFF(YEAR, 'JANUARY 6 1996', CURRENT_TIMESTAMP) AS 'AGE'</code></pre>
 
 
 
