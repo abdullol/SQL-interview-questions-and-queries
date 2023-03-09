@@ -100,6 +100,38 @@ SELECT empName, empSalary FROM Employee_Info</code></pre>
 <pre><code>update Employee_Info set empName = 'Umer' where empId=1014</code></pre>
 <pre><code>delete from Employee_Info where empId = 1007</code></pre>
 
+$ Aggregate Function/Group Function
+% It is applied on numeric value
+# SELECT SUM(empSalary) from Employee_Info
+# SELECT AVG(empSalary) FROM Employee_Info
+# SELECT COUNT(empSalary) FROM Employee_Info
+# SELECT MAX(empSalary) FROM Employee_Info
+
+$ Numeric Function
+% give positive of what is given
+# SELECT ABS(-10)
+% gives uppper value e.g 77
+# SELECT CEILING(76.12)
+% fives lower end value e,g, 76
+# SELECT FLOOR(76.12)
+% gives square root
+# SELECT SQRT(81) 
+% gives square
+# SELECT SQUARE(16)
+
+$ String Function
+% upper case
+# SELECT UPPER('this is our world')
+% lower case
+# SELECT LOWER('THIS IS OUR WORLD')
+% cut the strng
+# SELECT SUBSTRING('CHATGPTWHAT', 3, 6)
+% replace string
+# SELECT REPLACE('MICROSOFTISWHATIS', 'MICRO', 'MAJOR')
+% repeat that number of time
+# SELECT REPLICATE('MAJOR', 5)
+# SELECT LTRIM('      WORLD')
+# SELECT RTRIM('WORLD      ')
 
 
 
