@@ -146,5 +146,17 @@ SELECT empName, empSalary FROM Employee_Info</code></pre>
 <pre><code>SELECT DATENAME(HOUR, CURRENT_TIMESTAMP) AS 'HOUR'</code></pre>
 <pre><code>SELECT DATEDIFF(YEAR, 'JANUARY 6 1996', CURRENT_TIMESTAMP) AS 'AGE'</code></pre>
 
-
+<h4>Group By Clause</h4>
+<p>Defines one or more columns as Group, such that all values within that groups have the same value for those column always used with Select statement</p>
+<pre><code>SELECT empId, SUM(empSalary) AS 'TOTAL SALARY' FROM Employee_Info GROUP BY empId
+SELECT empSalary, COUNT(*) AS 'TOTAL_RECORD' FROM Employee_Info GROUP BY empSalary
+</code></pre>
+<h4>Having Clause</h4>
+<p>Defines the condition that is then applied to groups of rows always used with Select statement inside Group By clause</p>
+<pre><code>SELECT empId, SUM(empSalary) AS 'TOTAL SALARY' FROM Employee_Info GROUP BY empId
+SELECT empSalary, COUNT(*) AS 'TOTAL_RECORD' FROM Employee_Info GROUP BY empSalary
+SELECT job, Employee_Info.empName, SUM(empSalary) AS 'TOTAL RECORD' FROM Employee_Info 
+    GROUP BY job, Employee_Info.empName
+    HAVING empName = 'Ali' AND SUM(empSalary) BETWEEN 100000 AND 200000
+</code></pre>
 
