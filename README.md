@@ -141,6 +141,8 @@ SELECT empName, empSalary FROM Employee_Info</code></pre>
 <pre><code>SELECT GETDATE() AS TODAY_DATE</code></pre>
 <pre><code>SELECT SYSDATETIME() AS SYSTEM_DATE</code></pre>
 <pre><code>SELECT CURRENT_TIMESTAMP AS TODAY_DAT</code></pre>
+
+
 <pre><code>SELECT DATENAME(MONTH, CURRENT_TIMESTAMP) AS 'MONTH'</code></pre>
 <pre><code>SELECT DATENAME(YEAR, CURRENT_TIMESTAMP) AS 'YEAR'</code></pre>
 <pre><code>SELECT DATENAME(HOUR, CURRENT_TIMESTAMP) AS 'HOUR'</code></pre>
@@ -160,3 +162,16 @@ SELECT job, Employee_Info.empName, SUM(empSalary) AS 'TOTAL RECORD' FROM Employe
     HAVING empName = 'Ali' AND SUM(empSalary) BETWEEN 100000 AND 200000
 </code></pre>
 
+<h4>Top Clause</h4>
+<p>Specifies the first N rows of the query result that are to be retrieved.</p>
+<pre><code>SELECT TOP(3) empSalary from Employee_Info ORDER BY empSalary ASC</code></pre>
+<h4>Coping data from one database to another</h4>
+<pre><code>SELECT * INTO STUDENTS FROM CoreCrud.dbo.Employees</code></pre>
+
+<h4>Alter Statement</h4>
+<p>The ALTER statement is used to modify existing database objects, such as tables, columns, indexes, or constraints.</p>
+<pre><code>ALTER TABLE Employee_Info ADD Salary decimal</code></pre>
+<pre><code>ALTER TABLE EMPLOYEE_INFO ADD employeeId INTEGER NULL </code></pre>
+<pre><code>ALTER TABLE EMPLOYEE_INFO ADD REVENUE DECIMAL (10, 3) NULL, PROJECTID INTEGER CONSTRAINT PROJECTID_PK PRIMARY KEY</code></pre>
+<pre><code>ALTER TABLE EMPLOYEE_INFO DROP COLUMN OFFICE, ADDRESS</code></pre>
+<pre><code>ALTER TABLE EMPLOYEE_INFO DROP CONSTRAINT PK__Employee__AFB3EC0DC86E3F78, COLUMN SALARY</code></pre>
