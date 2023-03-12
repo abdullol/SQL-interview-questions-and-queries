@@ -175,3 +175,20 @@ SELECT job, Employee_Info.empName, SUM(empSalary) AS 'TOTAL RECORD' FROM Employe
 <pre><code>ALTER TABLE EMPLOYEE_INFO ADD REVENUE DECIMAL (10, 3) NULL, PROJECTID INTEGER CONSTRAINT PROJECTID_PK PRIMARY KEY</code></pre>
 <pre><code>ALTER TABLE EMPLOYEE_INFO DROP COLUMN OFFICE, ADDRESS</code></pre>
 <pre><code>ALTER TABLE EMPLOYEE_INFO DROP CONSTRAINT PK__Employee__AFB3EC0DC86E3F78, COLUMN SALARY</code></pre>
+<h4>Changing datatype of column</h4>
+<pre><code>ALTER TABLE EMPLOYEE_INFO ALTER COLUMN empSalary char(255)
+ALTER TABLE EMPLOYEE_INFO ALTER COLUMN DEPTID DECIMAL
+</code></pre>
+<h4>Aliases</h4>
+<p>Aliases can be used to create temporary names for columns and tables. There are two types of aliases:</p>
+<h5>Column Aliases</h5>
+<p>Column aliases are used to make column headings easier to read in a query:</p>
+<pre><code>SELECT empName AS 'Employee Name' FROM EMPLOYEE_INFO</code></pre>
+<pre><code>SELECT empName 'EMPLOYEE NAME' FROM EMPLOYEE_INFO</code></pre>
+<pre><code>SELECT empName AS 'Employee Name', phone AS Phone, empSalary AS 'Employee Salary', job AS 'Employee Job Title' from Employee_Info</code></pre>
+<h5>Table Aliases</h5>
+<p>Table aliases are used to shorten your SQL:</p>
+<pre><code>SELECT e.empName, d.deptName FROM EMPLOYEE_INFO e INNER JOIN DEPARTMENT_INFO d ON e.DEPTID = d.DEPTID;</code></pre>
+<h4>Joins</h4>
+<p>Joins are used to combine rows from two or more tables based on a related column between them. There are different types of joins:</p>
+
