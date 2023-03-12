@@ -179,6 +179,12 @@ SELECT job, Employee_Info.empName, SUM(empSalary) AS 'TOTAL RECORD' FROM Employe
 <pre><code>ALTER TABLE EMPLOYEE_INFO ALTER COLUMN empSalary char(255)
 ALTER TABLE EMPLOYEE_INFO ALTER COLUMN DEPTID DECIMAL
 </code></pre>
+<P>Adding foreign key in a table after table creation</p>
+<pre><code> ALTER TABLE Employee_Info
+ADD CONSTRAINT FK_Employee_Info_Department
+FOREIGN KEY (EMP_DEPTID)
+REFERENCES Department (Id);
+</code></pre>
 
 <h4>ADVANCED SQL TOPICS ONWARDS</h4>
 
@@ -193,5 +199,23 @@ ALTER TABLE EMPLOYEE_INFO ALTER COLUMN DEPTID DECIMAL
 <p>Table aliases are used to shorten your SQL:</p>
 <pre><code>SELECT e.empName, d.deptName FROM EMPLOYEE_INFO e INNER JOIN DEPARTMENT_INFO d ON e.DEPTID = d.DEPTID;</code></pre>
 <h4>Joins</h4>
+<p>Joins are used to retieve data from multiple tables</p>
 <p>Joins are used to combine rows from two or more tables based on a related column between them. There are different types of joins:</p>
+
+<ul>
+  <li>Inner Join/simple join/natural join</li>
+  <p>Inner Join returns rows from multiple tables where the join condition is satisfied. Other types of joins are also available, such as:</p>
+  <li>Outer Join</li>
+  <ul>
+    <li>Left Outer Join</li>
+    <li>Right Outer Join</li>
+    <li>Full Outer Join</li>
+  </ul>
+  <li>Cross Join</li>
+</ul>
+<p>Inner Join is used for getting records where defined properties have similar values. Here are some examples:</p>
+<pre><code>SELECT * FROM Employee_Info INNER JOIN Department ON LOWER(Employee_Info.job) = LOWER(Department.dept_name)</code></pre>
+<pre><code>SELECT * FROM Employee_Info INNER JOIN Department ON Employee_Info.EMP_DEPTID = Department.Id</code></pre>
+<p>Alias can be used to increase code readability and to reduce table length:</p>
+<pre><code>SELECT E.empName, E.empSalary, E.job, D.dept_location, D.dept_name FROM Employee_Info AS E INNER JOIN Department AS D ON E.job = D.dept_name</code></pre>
 
