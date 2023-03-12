@@ -179,6 +179,9 @@ SELECT job, Employee_Info.empName, SUM(empSalary) AS 'TOTAL RECORD' FROM Employe
 <pre><code>ALTER TABLE EMPLOYEE_INFO ALTER COLUMN empSalary char(255)
 ALTER TABLE EMPLOYEE_INFO ALTER COLUMN DEPTID DECIMAL
 </code></pre>
+
+<h4>ADVANCED SQL TOPICS ONWARDS</h4>
+
 <h4>Aliases</h4>
 <p>Aliases can be used to create temporary names for columns and tables. There are two types of aliases:</p>
 <h5>Column Aliases</h5>
