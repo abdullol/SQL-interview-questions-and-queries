@@ -219,3 +219,36 @@ REFERENCES Department (Id);
 <p>Alias can be used to increase code readability and to reduce table length:</p>
 <pre><code>SELECT E.empName, E.empSalary, E.job, D.dept_location, D.dept_name FROM Employee_Info AS E INNER JOIN Department AS D ON E.job = D.dept_name</code></pre>
 
+<h4>Left Outer Join</h4>
+<p>Returns all rows from the left-hand table and records from the right table with only matching values.</p>
+<pre>
+<code>
+SELECT  E.empId, E.empSalary, E.empSalary, D.dept_location, D.dept_name 
+FROM Employee_Info AS E
+LEFT OUTER JOIN Department AS D ON E.job = D.dept_name
+</code>
+</pre>
+<pre>
+<code>
+SELECT E.empId, E.empSalary, E.empSalary, D.dept_location, D.dept_name
+FROM Employee_Info AS E
+LEFT OUTER JOIN Department AS D ON E.EMP_DEPTID = D.Id
+</code>
+</pre>
+
+<h4>Right Outer Join</h4>
+<p>Returns all records from the right-hand table and records from the left-hand table with only matching values.</p>
+<pre>
+<code>
+SELECT D.dept_location, D.dept_name, E.empName, E.empSalary, E.job, E.phone 
+FROM Employee_Info AS E 
+RIGHT OUTER JOIN Department AS D ON E.EMP_DEPTID = D.Id
+</code>
+</pre>
+<pre>
+<code>
+SELECT D.dept_location, D.dept_name, E.empName, E.empSalary, E.job AS 'JOB TITLE', E.phone
+FROM Employee_Info AS E
+RIGHT OUTER JOIN Department AS D ON E.job = D.dept_name
+</code>
+</pre>
