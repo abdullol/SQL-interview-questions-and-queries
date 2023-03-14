@@ -252,3 +252,7 @@ FROM Employee_Info AS E
 RIGHT OUTER JOIN Department AS D ON E.job = D.dept_name
 </code>
 </pre>
+
+<h4>Full Outer Join</h4>
+<p> return all rows from left-hand and right-hand table with matching values </p>
+<pre><code>SELECT E.empName, E.empSalary, E.job, E.phone, D.dept_location, D.dept_name FROM Employee_Info AS E FULL OUTER JOIN Department AS D ON E.deptId = D.Id</code></pre>
