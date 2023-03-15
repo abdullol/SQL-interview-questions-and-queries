@@ -256,3 +256,10 @@ RIGHT OUTER JOIN Department AS D ON E.job = D.dept_name
 <h4>Full Outer Join</h4>
 <p> return all rows from left-hand and right-hand table with matching values </p>
 <pre><code>SELECT E.empName, E.empSalary, E.job, E.phone, D.dept_location, D.dept_name FROM Employee_Info AS E FULL OUTER JOIN Department AS D ON E.deptId = D.Id</code></pre>
+
+
+SELECT * FROM Employee_Info AS E INNER JOIN Department AS D on E.EMP_DEPTID = D.Id AND
+D.dept_location = 'MULTAN'
+
+SELECT * FROM Employee_Info AS E WHERE E.EMP_DEPTID = 
+(SELECT ID FROM Department WHERE dept_location = 'MULTAN')
