@@ -257,9 +257,22 @@ RIGHT OUTER JOIN Department AS D ON E.job = D.dept_name
 <p> return all rows from left-hand and right-hand table with matching values </p>
 <pre><code>SELECT E.empName, E.empSalary, E.job, E.phone, D.dept_location, D.dept_name FROM Employee_Info AS E FULL OUTER JOIN Department AS D ON E.deptId = D.Id</code></pre>
 
-
-SELECT * FROM Employee_Info AS E INNER JOIN Department AS D on E.EMP_DEPTID = D.Id AND
-D.dept_location = 'MULTAN'
-
-SELECT * FROM Employee_Info AS E WHERE E.EMP_DEPTID = 
-(SELECT ID FROM Department WHERE dept_location = 'MULTAN')
+<h4>Subquery</h4>
+<p>A query within another SQL query</p>
+<p>A subquery is used to retrieve data that will be used in the main query's condition, expression, or from clause. If you need to filter your main query based on a subset of data that is not directly available in the main table, a subquery can be used to retrieve the required data.</p>
+<pre><code>
+--Display salary of employees whose salary is greater than Sarah's salary<br>
+SELECT empSalary, empName FROM Employee_Info WHERE empSalary > <br>
+(SELECT empSalary FROM Employee_Info WHERE empName = 'Sarah Lee' )<br>
+</code></pre>
+<pre><code>
+--Display name, salary of employees whose salary us greater than Sarah salary and deptno same as adam<br>
+SELECT empName, empSalary FROM Employee_Info WHERE empSalary >= <br>
+(SELECT empSalary FROM Employee_Info WHERE empName = 'Sarah Lee') AND EMP_DEPTID = <br>
+(SELECT EMP_DEPTID FROM Employee_Info WHERE empName = 'Sarah Lee')<br>
+</code></pre>
+<pre><code>
+--Display employe info where department is located at Newyork<br>
+SELECT * FROM Employee_Info AS E INNER JOIN Department AS  D ON E.EMP_DEPTID = D.Id WHERE<br>
+D.dept_location = (SELECT D.dept_location WHERE D.dept_location = 'MULTAN')<br>
+</code></pre>
