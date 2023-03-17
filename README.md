@@ -3,6 +3,7 @@ make its html for readme file on github
 give h4 heading to line starting from $
 give paragraph to line starting from %
 give code script to line starting from #
+wrap code around pre tag
 
 
 <h3>SQL Concepts</h3>
@@ -276,3 +277,48 @@ SELECT empName, empSalary FROM Employee_Info WHERE empSalary >= <br>
 SELECT * FROM Employee_Info AS E INNER JOIN Department AS  D ON E.EMP_DEPTID = D.Id WHERE<br>
 D.dept_location = (SELECT D.dept_location WHERE D.dept_location = 'MULTAN')<br>
 </code></pre>
+
+ <h4>Introduction to T-SQL (transactional)</h4>
+    <p>In Standard SQL, we are able to perform DML Statements, operators, built-in functions, and single line queries. However, in T-SQL, we get Standard SQL apart from batch or script, triggers, working with variables, user-defined functions, stored procedures, and many more.</p>
+    <h4>Working with Variables</h4>
+<p>Variables are generally used to store values in memory. T-SQL variables are created by using DECLARE followed by a variable name preceded with the '@' symbol and datatype.</p>
+<pre>
+  <code>DECLARE @NAME VARCHAR(255), @AGE INT;
+  
+  -- By default, the declared variable value is null. For assignment, we can use SET and SELECT statements. SET can assign a value to one variable, and SELECT can assign a value to multiple variables.
+  SET @variable_name = value
+  SELECT @var_name = value,@var_name = value;
+  SET @age += 10;
+  SET @age = @age * 10;
+      </code>
+</pre>
+<pre>
+  <code>
+DECLARE @AGE INT = 100;
+  SET @AGE = @AGE * 12;
+  SELECT @AGE;
+    </code>
+</pre>
+<pre>
+  <code>
+  DECLARE @NAME VARCHAR(255), @QTY INT = 23;
+  SELECT @NAME = 'ABDULLAH', @QTY = 27 ;
+  SELECT @NAME, @QTY;
+  </code>
+</pre>
+
+<h4>Batch</h4>
+<p>It's a group of 2 or more SQL statements or a single SQL statement. It can have DML, DDL, DCL (it contains control permissions).</p>
+<p>1- Explicit Batch: 2 or more SQL statements separated by a semicolon.<br>
+2- Procedure: it contains more than one SQL statement.</p>
+
+<h4>Go Command</h4>
+<p>It's not an SQL statement, but it's a command recognized by SQL Server utilities. It signals the end of a batch. You can access certain declared variables within that GO statement.</p>
+<pre>
+  <code>
+DECLARE @NAME VARCHAR(50)
+SELECT @NAME = 'ChatPT'
+SELECT @NAME AS 'NAME'
+GO
+</code>
+</pre>
