@@ -322,3 +322,59 @@ SELECT @NAME AS 'NAME'
 GO
 </code>
 </pre>
+
+<h4>Control Flow</h4>
+	<p>T-SQL statements are executed in sequence one after another through control flow keywords we want to interrupt the normal flow. Control flow keywords are:</p>
+	<ul>
+		<li>BEGIN...END</li>
+		<li>IF...ELSE</li>
+		<li>WHILE</li>
+		<li>BREAK</li>
+		<li>CONTINUE</li>
+		<li>GOTO</li>
+		<li>RETURN</li>
+		<li>TRY...CATCH</li>
+		<li>THROW</li>
+		<li>WAITFOR</li>
+	</ul>
+ <h4>Begin End</h4>
+<p>Are used to group multiple lines into single statement. It can be nested means, they can be placed into one another.</p>
+<pre><code>BEGIN 
+DECLARE @NAME VARCHAR(255), @SALARY char(55), @DEPTID INT = 7;
+SELECT @NAME = empName, @SALARY = empSalary FROM Employee_Info WHERE EMP_DEPTID = @DEPTID
+SELECT @NAME AS 'NAME', @SALARY AS 'SALARY';
+BEGIN 
+	PRINT 'DEPARTMENT ID: '
+END
+END
+GO</code></pre>
+<h4>IF...Else</h4>
+<pre><code>BEGIN 
+DECLARE @SALARY CHAR(55);
+SELECT @SALARY = AVG(empSalary) FROM Employee_Info;
+SELECT @SALARY AS 'AVG SALARY';
+IF @SALARY &gt; '25000'
+	BEGIN 
+		PRINT 'AVERAGE SALARY IS GREATER THAN 25000';
+	END
+ELSE 
+	BEGIN 
+		PRINT 'AVG SALARY IS LESS THAN 25000'
+	END 
+END</code></pre>
+<h4>While Loop</h4>
+<pre><code>WHILE [condition]
+BEGIN
+[SQL CODE HERE]
+END</code></pre>
+<h4>Try...Catch</h4>
+<p>Error handling concept, SQL conditions will be grouped in Try block.</p>
+<pre><code>BEGIN TRY 
+[SQL CONDITION HERE]
+END TRY
+BEGIN CATCH
+[SQL CONDITION HERE] e.g. SELECT ERROR_MESSAGE() AS 'ERROR MESSAGE', ERROR_LINE() AS 'ERROR LINE';
+END CATCH</code></pre>
+
+</body>
+</html>
