@@ -426,22 +426,6 @@ GO
 
 <p>There are 2 ways to create a stored procedure:</p>
 
-<h4>1 - SP with parameter</h4>
-
-<pre><code>
-CREATE PROCEDURE procedure_name
-AS 
-BEGIN
-   [sql statements or block]
-END
-
-CREATE PROCEDURE proc_employeeInfo
-AS 
-BEGIN 
-SELECT * FROM Employee_Info WHERE empId = 1003
-END;
-EXECUTE proc_employeeInfo
-</code></pre>
 <h4>2 - SP without parameter</h4>
 <pre><code>
 CREATE PROCEDURE procedure_name
@@ -450,3 +434,12 @@ BEGIN
    [sql statements or block]
 END
 </code></pre>
+<pre><code>
+CREATE PROCEDURE proc_employeeInfo
+AS 
+BEGIN 
+SELECT * FROM Employee_Info WHERE empId = 1003
+END;
+EXECUTE proc_employeeInfo
+</code></pre>
+<h4>1 - SP with parameter</h4>
