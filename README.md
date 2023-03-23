@@ -375,6 +375,78 @@ END TRY
 BEGIN CATCH
 [SQL CONDITION HERE] e.g. SELECT ERROR_MESSAGE() AS 'ERROR MESSAGE', ERROR_LINE() AS 'ERROR LINE';
 END CATCH</code></pre>
+<h4>WAIT...FOR</h4>
 
-</body>
-</html>
+<p>Blocks the execution of batch, store procedure or transaction until a specified time or time interval interval elapses or a specified statement modifies or return atleast one row.</p>
+
+<p><b>WAITFOR</b> has 2 arguments:</p>
+
+<ol>
+  <li><b>Time:</b> It will execute query on this time after every 24 hours</li>
+</ol>
+
+<pre><code>
+SELECT GETDATE() AS 'CURRENT TIME';
+GO 
+BEGIN 
+	WAITFOR TIME '14:57:00'
+	SELECT * FROM Employee_Info
+END 
+GO 
+</code></pre>
+<ol start="2">
+  <li><b>Delay:</b> It will execute query after every 10 seconds</li>
+</ol>
+<pre><code>
+SELECT GETDATE() AS 'CURRENT TIME';
+GO
+BEGIN 
+	WAITFOR DELAY '00:00:10'
+	SELECT * FROM Employee_Info
+END 
+GO 
+</code></pre>
+<h4>Stored Procedure</h4>
+<p>It's a group of one or more T-SQL statements. It can accept input parameter and return multiple values. It contains programming statements to perform operations on database. It returns a value which indicates the success or failure of the program.</p>
+<p><b>Benefits:</b></p>
+<ul>
+  <li>Reuse code</li>
+  <li>Improve performance</li>
+  <li>Strong security</li>
+  <li>Reduce server/client network traffic</li>
+</ul>
+<p><b>Types:</b></p>
+<ul>
+  <li>System: Physically stored in the internal resource database.</li>
+  <li>User-defined: It can be stored in a user-defined database or system database except the resource database.</li>
+  <li>Temporary: Form of user-defined procedure, they are like permanent procedures except they are stored in tempdb.</li>
+</ul>
+
+<h4>Create Stored Procedure</h4>
+
+<p>There are 2 ways to create a stored procedure:</p>
+
+<h4>1 - SP with parameter</h4>
+
+<pre><code>
+CREATE PROCEDURE procedure_name
+AS 
+BEGIN
+   [sql statements or block]
+END
+
+CREATE PROCEDURE proc_employeeInfo
+AS 
+BEGIN 
+SELECT * FROM Employee_Info WHERE empId = 1003
+END;
+EXECUTE proc_employeeInfo
+</code></pre>
+<h4>2 - SP without parameter</h4>
+<pre><code>
+CREATE PROCEDURE procedure_name
+AS 
+BEGIN
+   [sql statements or block]
+END
+</code></pre>
