@@ -443,3 +443,33 @@ END;
 EXECUTE proc_employeeInfo
 </code></pre>
 <h4>1 - SP with parameter</h4>
+<p>This stored procedure retrieves employee information along with their department details based on the location parameter passed to the procedure.</p>
+
+<pre><code> 
+	USE [database_name]
+	GO
+
+	CREATE PROCEDURE proc_employeeDetailJobWise(@location AS VARCHAR(100))
+	AS
+	BEGIN 
+		SELECT * FROM Employee_Info e INNER JOIN Department d 
+		ON e.EMP_DEPTID = d.Id
+		WHERE d.dept_location = @location
+	END;
+	GO
+</code></pre>
+
+<h4>Alter SP</h4>
+<p>This stored procedure retrieves all employee information along with their department details whose department ID is 5.</p>
+<pre><code> 
+	USE [database_name]
+	GO
+
+	ALTER PROCEDURE proc_allEmployeeInfo
+	AS 
+	BEGIN 
+		SELECT * FROM Employee_Info AS E INNER JOIN Department AS D
+		ON E.EMP_DEPTID = 5
+	END;
+	GO
+</code></pre>
