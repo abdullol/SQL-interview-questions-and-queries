@@ -473,3 +473,23 @@ EXECUTE proc_employeeInfo
 	END;
 	GO
 </code></pre>
+
+<h4>Function - User Defined Function (UDF)</h4>
+<p>UDF always returns a value.</p>
+<p>It has only one input parameter.</p>
+<p>It cannot return multiple result sets.</p>
+<p>Error handling is restricted, so you cannot use Try-Catch or @Error.</p>
+<p>SET statements are not allowed in UDFs.</p>
+<p>UDFs cannot call stored procedures, but stored procedures can call functions.</p>
+<p>UDFs can be nested.</p>
+<pre><code>
+-- create a function to get employee salary by passing employee name
+CREATE FUNCTION salary(@name as varchar(50))
+RETURNS decimal
+BEGIN
+    DECLARE @sal DECIMAL;
+    SELECT @sal = Employee_Info.empSalary FROM Employee_Info
+    WHERE Employee_Info.empName = @name;
+    RETURN @sal;
+END
+</code></pre>
