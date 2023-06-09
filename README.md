@@ -483,6 +483,19 @@ EXECUTE proc_employeeInfo
 <p>UDFs cannot call stored procedures, but stored procedures can call functions.</p>
 <p>UDFs can be nested.</p>
 <pre><code>
+-- function syntax
+CREATE FUNCTION function_name (parameter datatype, --- )
+---
+---
+RETURNS return_datatype
+[WITH  <function_option[...n]>]
+[AS]
+    BEGIN 
+      function_body
+      RETURN scalar_expression
+    END;
+</code></pre>
+<pre><code>
 -- create a function to get employee salary by passing employee name
 CREATE FUNCTION salary(@name as varchar(50))
 RETURNS decimal
