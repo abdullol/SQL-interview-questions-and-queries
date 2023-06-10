@@ -506,3 +506,21 @@ BEGIN
     RETURN @sal;
 END
 </code></pre>
+
+ <h4>Table-valued functions:</h4>
+  <p>
+    A table-valued function is a function that returns a table as its result. It can be used in a query as if it were a regular table, allowing you to join, filter, and perform other operations on its result set. Table-valued functions are useful when you need to encapsulate complex queries or perform data manipulations and return the results as a table.
+  </p>
+  <p>
+    There are two types of table-valued functions:
+  </p>
+  <ul>
+    <li>
+      <strong>Inline table-valued functions:</strong> These functions return a table directly as the result of a single SELECT statement.
+    </li>
+    <li>
+      <strong>Multi-statement table-valued functions:</strong> These functions use a BEGIN...END block and can have multiple statements to generate and populate the result table.
+    </li>
+</ul>
+
+
