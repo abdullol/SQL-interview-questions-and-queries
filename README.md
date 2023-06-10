@@ -523,4 +523,25 @@ END
     </li>
 </ul>
 
-
+  <h4>Trigger</h4>
+  <p>
+    Special type of SP, that automatically runs when an event occurs.
+    Here events are DML operations (Insert, Delete, Update).
+  </p>
+  <p>
+    <b>Types of Trigger</b>
+  </p>
+  <ol>
+    <li>DDL Trigger: is fired when DDL Statements like DROP Table, Create Table, or Alter Table occurs. DDL Triggers are always after triggers.</li>
+    <li>DML Trigger: We can create DML Triggers on DML Statements like INSERT, UPDATE, DELETE. They are of 3 types.</li>
+  </ol>
+  <ul>
+    <li>After Trigger: Executes after the action of Insert, delete, merge, update.</li>
+    <li>Instead Of trigger:
+      <ul>
+        <li>Overrides the standard action of the triggering statement.</li>
+        <li>Used to perform error or value checking.</li>
+        <li>Performs additional action before Insert, delete, merge, update.</li>
+      </ul>
+    </li>
+  </ul>
