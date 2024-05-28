@@ -6,6 +6,11 @@ give code script to line starting from #
 wrap code around pre tag
 
 
+* Views
+* Temp Table
+* Distinct 
+
+
 <h3>SQL Concepts</h3>
 
 <h4>Create Database</h4>
