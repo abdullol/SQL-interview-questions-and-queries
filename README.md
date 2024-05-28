@@ -5,7 +5,7 @@ give paragraph to line starting from %
 give code script to line starting from #
 wrap code around pre tag
 
-
+https://www.youtube.com/watch?v=1idbrEwuh8w&list=PLysly0KYnAY08stX1R_xDayz-jlALgfAg&ab_channel=IshwarAcademy
 * Views
 * Temp Table
 * Distinct 
